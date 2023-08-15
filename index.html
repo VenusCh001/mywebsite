@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+
+</head>
+<body>
+    <a-scene>
+        <a-assets>
+            <img  id="groundTexture" src="textures/grass2.PNG">
+            <img  id="skyTexture" src="textures/back3.jpg">
+            <video id="pitch-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
+            <video id="demo-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
+            <img id="boss" src="boss1.PNG">
+            <img id="info1" src="images/proinfo1.png">
+            <img id="info2" src="images/proinfo2.png">
+            <img id="info3" src="images/proinfo3.png">
+            <img id="info4" src="images/proinfo4.png">
+
+
+          </a-assets>
+          
+          <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048" segments-height="8" segments-width="8"  geometry="segmentsWidth: 15" rotation="0 -150 0"></a-sky>          
+          <a-plane src="#groundTexture" rotation="-90 0 0" position="0 -0.01 0" repeat="30 30 30" height="100" width="100"></a-plane>
+          <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
+          <a-light type="directional" intensity="1.0" position=" 2  1 -1"></a-light>
+        <a-camera position="-7 1.6 13" rotation="0 0 0">
+            <a-cursor></a-cursor>
+        </a-camera>
+        
+        <!--bedroom-->
+        <rw-room >
+            <rw-wall position=" 7 0 -6" material="color:#FFBDAF"></rw-wall>
+            <rw-wall position=" 7 0 -12" material="color:#FFBDAF"></rw-wall>
+            <rw-wall position=" 3 0 -12" material="color:#FFBDAF"></rw-wall>
+            <rw-wall position=" 3 0 -6" material="color:#FFBDAF"><rw-doorhole id="frontInner3"></rw-doorhole></rw-wall>
+            <rw-ceiling material="color:#99A"></rw-ceiling>
+        </rw-room>
+        <rw-room position="0 0 0" outside="true" material="color:#877">
+        
+            <rw-wall position="7 0 -6" height="3"></rw-wall>
+        <rw-wall position=" 7 0 -12" height="3"></rw-wall>
+            <rw-wall position=" 3 0 -12" height="3"><rw-doorhole id="frontOuter3"></rw-doorhole>
+                <rw-doorlink from="#frontInner3" to="#frontOuter3" material="color:#778" position="3 0 -3 ">
+                  <rw-floor></rw-floor>
+                  <rw-ceiling></rw-ceiling>
+                  <rw-sides></rw-sides>
+                </rw-doorlink></rw-wall>
+            <rw-wall position="3 0 -6" height="3"></rw-wall>
+        </rw-room>
+
+        <!--bathroom-->
+        <rw-room >
+            
+            <rw-wall position=" -7 0 -3" material="color:#7CFF7C"></rw-wall>
+            <rw-wall position=" -7 0 -5.9" material="color:#7CFF7C"></rw-wall>
+            <rw-wall position=" -3 0 -5.9" material="color:#7CFF7C"></rw-wall>
+            <rw-wall position=" -3 0 -3" material="color:#7CFF7C"><rw-doorhole id="frontInner1"></rw-doorhole></rw-wall>
+            <rw-ceiling material="color:#99A"></rw-ceiling>
+        </rw-room>
+        <rw-room position="0 0 0" outside="true" material="color:#877">
+        
+            <rw-wall position="-7 0 -3" height="3"><rw-doorhole id="frontOuter1"></rw-doorhole>
+                <rw-doorlink from="#frontInner1" to="#frontOuter1" material="color:#778" position="3 0 -3 ">
+                  <rw-floor></rw-floor>
+                  <rw-ceiling></rw-ceiling>
+                  <rw-sides></rw-sides>
+                </rw-doorlink></rw-wall>
+        <rw-wall position=" -7 0 -5.9" height="3"></rw-wall>
+            <rw-wall position=" -3 0 -5.9" height="3"></rw-wall>
+            <rw-wall position="-3 0 -3" height="3"></rw-wall>
+        </rw-room>
+          
+
+        <!--study room-->
+        <rw-room >
+            <rw-wall position=" 7 0 -3" material="color:#FFAFF7 "></rw-wall>
+            <rw-wall position=" 7 0 -5.9" material="color:#FFAFF7 "></rw-wall>
+            <rw-wall position=" 3 0 -5.9" material="color:#FFAFF7 "></rw-wall>
+            <rw-wall position=" 3 0 -3" material="color:#FFAFF7 "><rw-doorhole id="frontInner2"></rw-doorhole></rw-wall>
+            <rw-ceiling material="color:#99A"></rw-ceiling>
+        </rw-room>
+        <rw-room position="0 0 0" outside="true" material="color:#877">
+        
+            <rw-wall position="7 0 -3" height="3"></rw-wall>
+        <rw-wall position=" 7 0 -5.9" height="3"></rw-wall>
+            <rw-wall position=" 3 0 -5.9" height="3"><rw-doorhole id="frontOuter2"></rw-doorhole>
+                <rw-doorlink from="#frontInner2" to="#frontOuter2" material="color:#778" position="3 0 -3">
+                  <rw-floor></rw-floor>
+                  <rw-ceiling></rw-ceiling>
+                  <rw-sides></rw-sides>
+                </rw-doorlink></rw-wall>
+            <rw-wall position="3 0 -3" height="3"></rw-wall>
+        </rw-room>
+       
+
+        <!--kitchen-->
+        <rw-room >
+            <rw-wall position=" -7 0 -6" material="color:#AFFFF8 "></rw-doorhole></rw-wall>
+            <rw-wall position=" -7 0 -12" material="color:#AFFFF8 "></rw-wall>
+            <rw-wall position=" -3 0 -12" material="color:#AFFFF8"><rw-doorhole id="frontInner4"></rw-doorhole></rw-wall>
+            <rw-wall position=" -3 0 -6" material="color:#AFFFF8 "></rw-wall>
+            <rw-ceiling material="color:#99A"></rw-ceiling>
+        </rw-room>
+        <rw-room position="0 0 0" outside="true" material="color:#877">
+        
+            <rw-wall position="-7 0 -6" height="3"></rw-wall>
+        <rw-wall position=" -7 0 -12" height="3"></rw-wall>
+            <rw-wall position=" -3 0 -12" height="3"></rw-wall>
+            <rw-wall position="-3 0 -6" height="3"><rw-doorhole id="frontOuter4"></rw-doorhole>
+                <rw-doorlink from="#frontInner4" to="#frontOuter4" material="color:#778" position="3 0 -3">
+                  <rw-floor></rw-floor>
+                  <rw-ceiling></rw-ceiling>
+                  <rw-sides></rw-sides>
+                </rw-doorlink></rw-wall>
+        </rw-room>
+    
+
+        <!--gaming zone-->
+        <rw-room >
+            <rw-wall position=" -3 0 -12" material="color:#FEFC9C"></rw-wall>
+            <rw-wall position=" -3 0 -18" material="color:#FEFC9C"></rw-wall>
+            <rw-wall position=" 3 0 -18" material="color:#FEFC9C"></rw-wall>
+            <rw-wall position=" 3 0 -12" material="color:#FEFC9C"><rw-doorhole id="frontInner5"></rw-doorhole></rw-wall>
+            <rw-ceiling material="color:#99A"></rw-ceiling>
+        </rw-room>
+        
+        <rw-room position="0 0 0" outside="true" material="color:#877">
+        
+            <rw-wall position="-3 0 -12" height="3"><rw-doorhole id="frontOuter5"></rw-doorhole>
+                <rw-doorlink from="#frontInner5" to="#frontOuter5" material="color:#778" position="3 0 -3">
+                  <rw-floor></rw-floor>
+                  <rw-ceiling></rw-ceiling>
+                  <rw-sides></rw-sides>
+                </rw-doorlink></rw-wall>
+        <rw-wall position=" -3 0 -18" height="3"></rw-wall>
+            <rw-wall position=" 3 0 -18" height="3"></rw-wall>
+            <rw-wall position="3 0 -12" height="3"></rw-wall>
+        </rw-room>
+
+        <!--adding labels-->
+        <a-text value="DEMO VIDEO ROOM" position="-6.5 2.3 -3"></a-text>
+        <a-text value="PITCH VIDEO ROOM" rotation="0 -90 0" position="3 2.6 -5.3"></a-text>
+        <a-text value="TREASURE" rotation="0 -90 0" position="3 2.6 -9"></a-text>
+        <a-text value="PROJECT" rotation="0 90 0" position="-3 2.6 -9"></a-text>
+        <a-text value="GET TO KNOW US" rotation="0 0 0" position="-0.8 2.6 -12"></a-text>
+
+        <a-text value="SOLO PROJECT" rotation="0 90 0" position="-3 2 -13"></a-text>
+        <a-text value="TEAM NAME = TINKER BELL" rotation="0 90 0" position="-3 1.6 -13"></a-text>
+        <a-text value="MY NAME = VENUS CHAUDHARY" rotation="0 90 0" position="-3 1.2 -13"></a-text>
+        <a-text value="EDUCATION = CSE UNDERGRAD" rotation="0 90 0" position="-3 0.8 -13"></a-text>
+
+        
+        <a-text value="OUR MENTORS"  position="3 2 -16" rotation="0 -90 0"></a-text>
+        <a-text value="IT DEPARTMENT"  position="3 1.6 -16.5" rotation="0 -90 0"></a-text>
+        <a-text value="STEAMEDU"  position="3 1.2 -16.5" rotation="0 -90 0"></a-text>
+        
+        <a-text value="SOFTWARE USED" rotation="0 -180 0" position="-1 2 -12"></a-text>
+        <a-text value="1 A-FRAME" rotation="0 -180 0" position="-0.8 1.6 -12"></a-text>
+            <a-text value="HARDWARE" rotation="0 -180 0" position="2.4 2 -12"></a-text>
+            <a-text value=" 1. Installed RAM = 4.00 GB" rotation="0 -180 0" position="3 1.6 -12"></a-text>
+            <a-text value="2. System type = 64-bit" rotation="0 -180 0" position="3 1.3 -12"></a-text>
+            <a-text value="3. Processor = i5-2400 " rotation="0 -180 0" position="3 1 -12"></a-text>
+
+        <!--project room-->
+        <<a-plane src="#info1" scale="1.03 1.28 1" position="-3.04301 1.29677 -7.29579" rotation="0 -90 0" ></a-plane>
+        <a-plane src="#info2" scale="1 1 1" position="-4 1 -6.2"rotation="0 180 0"></a-plane>
+        <a-plane src="#info3" scale="1 1 1" position="-5 1 -6.2"rotation="0 180 0"></a-plane>
+        <a-plane src="#info4" scale="1 1 1" position="-6 1 -6.2"rotation="0 180 0"></a-plane>
+
+
+        <!--entrance-->
+        <a-plane src="#boss" scale="1 1 1" position="-8 1 10"></a-plane>
+        <a-text value="welcome to my webvr home" rotation="0 0 0" position="-8 0.6 11" scale="1.2 1.2 1.6"></a-text>
+
+        <!--adding videos to the webvr house-->
+        <a-video src="#demo-video" width="16" height="9" position="0 0 -20"></a-video>
+        <a-video src="#pitch-video" width="16" height="9" position="0 0 20"></a-video>
+        <!--adding project link to the webvr house-->
+        <!--adding github link to the webvr house-->
+
+            
+
+       
+          
+
+        
+        
+
+        
+    </a-scene>
+    
+</body>
+</html>
