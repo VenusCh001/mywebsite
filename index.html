@@ -11,6 +11,8 @@
 <body>
     <a-scene>
         <a-assets>
+         <!--   <img id="portal1" src="images/portal.PNG">
+            <img id="portal2" src="images/portal2.PNG">-->
             <img  id="groundTexture" src="textures/grass2.PNG">
             <img  id="skyTexture" src="textures/back3.jpg">
             <video id="pitch-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
@@ -28,7 +30,7 @@
           <a-plane src="#groundTexture" rotation="-90 0 0" position="0 -0.01 0" repeat="30 30 30" height="100" width="100"></a-plane>
           <a-light type="directional" intensity="0.9" position="-1 -2  2"></a-light>
           <a-light type="directional" intensity="1.0" position=" 2  1 -1"></a-light>
-        <a-camera position="-7 1.6 13" rotation="0 0 0">
+        <a-camera position="-7 1.6 13" rotation="0 0 0"look-controls="pointerLockEnabled: true">
             <a-cursor></a-cursor>
         </a-camera>
         
@@ -143,6 +145,7 @@
         </rw-room>
 
         <!--adding labels-->
+        
         <a-text value="DEMO VIDEO ROOM" position="-6.5 2.3 -3"></a-text>
         <a-text value="PITCH VIDEO ROOM" rotation="0 -90 0" position="3 2.6 -5.3"></a-text>
         <a-text value="TREASURE" rotation="0 -90 0" position="3 2.6 -9"></a-text>
@@ -172,21 +175,29 @@
         <a-plane src="#info3" scale="1 1 1" position="-5 1 -6.2"rotation="0 180 0"></a-plane>
         <a-plane src="#info4" scale="1 1 1" position="-6 1 -6.2"rotation="0 180 0"></a-plane>
 
+        <!--my learnings-->
+        <a-text value="I got to know about these:"  position="-1.43854 2.11529 -17.56064" scale="1.2 1.2 1.6" text="color: #000000"></a-text>
 
         <!--entrance-->
-        <a-plane src="#boss" scale="1 1 1" position="-8 1 10"></a-plane>
+        <a-plane src="#boss" scale="1.67 2.95 1" position="-8 1.41 10" ></a-plane>
         <a-text value="Welcome to my webvr home" rotation="0 0 0" position="-8 0.6 11" scale="1.2 1.2 1.6"></a-text>
 
-        <!--adding videos to the webvr house-->
+        <!--adding videos to the webvr house
         <a-video src="#demo-video" width="16" height="9" position="0 0 -20"></a-video>
-        <a-video src="#pitch-video" width="16" height="9" position="0 0 20"></a-video>
-        <!--adding project link to the webvr house-->
-        <!--adding github link to the webvr house-->
+        <a-video src="#pitch-video" width="16" height="9" position="0 0 20"></a-video>-->
 
-            
+        <!--direction of use for links by tinker bell-->
+        <a-text value="click on the portal to view the links" rotation="0 -90 0" position="6.5 1.5 -11" scale="1.2 1.2 1.6" color="black"></a-text>
 
+         <!--adding github website deployment link to the webvr house-->
+    <!--     <a-entity link="href: https://venusch001.github.io/mywebsite/; title: My webvr link ; image:#portal1"></a-entity>
+         <a-link href="https://venusch001.github.io/mywebsite/" title="My webvr link" position="4.8 1.4 -11.5"image="#portal1" scale="0.5 0.5 0.5"></a-link>
+
+    <!--adding project drive link to the webvr house-->
+    <!--    <a-entity link="href: https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing; title: My project drive link ;image:#portal2"></a-entity>
+        <a-link href="https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing" title="My project drive link" position="4.8 1.4 -6.5"image="#portal2" scale="0.5 0.5 0.5"></a-link>-->
        
-          
+    
 
         
         
