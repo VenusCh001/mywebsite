@@ -13,6 +13,9 @@
         <a-assets>
          <!--   <img id="portal1" src="images/portal.PNG">
             <img id="portal2" src="images/portal2.PNG">-->
+            <img id="soc" src="images/society benefits.jpg">
+            <img id="future" src="images/future features.png">
+            <img id="painpoints" src="images/consequences.jpg">
             <img  id="groundTexture" src="textures/grass2.PNG">
             <img  id="skyTexture" src="textures/back3.jpg">
             <video id="pitch-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
@@ -101,6 +104,11 @@
        
 
         <!--kitchen-->
+        <a-plane id="toggleButton" scale="0.5 0.5 0.5" position="-3.2 1.5 -10"color="blue" rotation="0 -90 0"></a-plane>
+        <a-text value="LIGHT"  position="-3.28 1.5 -10.18" scale="0.5 0.5 0.5" rotation="0 -90 0" text="color: white"></a-text>
+
+
+        <a-light id="myLight" type="directional" intensity="1.0" position=" -5  3 -9" visible="false"></a-light>
         <rw-room >
             <rw-wall position=" -7 0 -6" material="color:#AFFFF8 "></rw-doorhole></rw-wall>
             <rw-wall position=" -7 0 -12" material="color:#AFFFF8 "></rw-wall>
@@ -175,6 +183,10 @@
         <a-plane src="#info3" scale="1 1 1" position="-5 1 -6.2"rotation="0 180 0"></a-plane>
         <a-plane src="#info4" scale="1 1 1" position="-6 1 -6.2"rotation="0 180 0"></a-plane>
 
+        <a-plane src="#soc" scale="3 3 3" position="-5 1 -11.7"rotation="0 0 0"></a-plane>
+        <a-plane src="#painpoints" scale="2 2.5 2" position="-6.5 1 -7.4"rotation="0 90 0"></a-plane>
+        <a-plane src="#future" scale="2 2 2" position="-6.3 1.3 -9.7"rotation="0 90 0"></a-plane>
+
         <!--my learnings-->
         <a-text value="I got to know about these:"  position="-1.43854 2.11529 -17.56064" scale="1.2 1.2 1.6" text="color: #000000"></a-text>
 
@@ -196,7 +208,19 @@
     <!--adding project drive link to the webvr house-->
     <!--    <a-entity link="href: https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing; title: My project drive link ;image:#portal2"></a-entity>
         <a-link href="https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing" title="My project drive link" position="4.8 1.4 -6.5"image="#portal2" scale="0.5 0.5 0.5"></a-link>-->
-       
+        <script>
+            const toggleButton = document.getElementById('toggleButton');
+            const myLight = document.getElementById('myLight');
+            
+            let isLightOn = false; // Variable to track the light's state
+        
+            toggleButton.addEventListener('click', () => {
+                // Toggle the visibility of the light element
+                isLightOn = !isLightOn; // Toggle the light state
+                myLight.setAttribute('visible', isLightOn); // Set light visibility based on state
+            });
+        </script>
+        
     
 
         
