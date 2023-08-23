@@ -6,26 +6,27 @@
     <title>Document</title>
     <script src="https://aframe.io/releases/1.2.0/aframe.js"></script>
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <script src="https://rawgit.com/oscarmarinmiro/aframe-video-controls/master/dist/aframe-video-controls.min.js"></script>
 
 </head>
 <body>
     <a-scene>
         <a-assets>
-         <!--   <img id="portal1" src="images/portal.PNG">
-            <img id="portal2" src="images/portal2.PNG">-->
+            <img id="learn1" src="images/ar and vr .png">
+            <img id="learn2" src="images/3d modelling and metaverse.png">
+          <img id="portal1" src="images/electric/21466.jpg">
+            <img id="portal2" src="images/portal2.jpg">
             <img id="soc" src="images/society benefits.jpg">
             <img id="future" src="images/future features.png">
             <img id="painpoints" src="images/consequences.jpg">
             <img  id="groundTexture" src="textures/grass2.PNG">
             <img  id="skyTexture" src="textures/back3.jpg">
-            <video id="pitch-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
-            <video id="demo-video" autoplay loop="true" src="penguin-sledding.mp4"></video>
+            <video id="demo-video"  src="demo-video-finale.mp4"></video>
             <img id="boss" src="images/boss1.PNG">
             <img id="info1" src="images/proinfo1.png">
             <img id="info2" src="images/proinfo2.png">
             <img id="info3" src="images/proinfo3.png">
             <img id="info4" src="images/proinfo4.png">
-
 
           </a-assets>
           
@@ -189,25 +190,30 @@
 
         <!--my learnings-->
         <a-text value="I got to know about these:"  position="-1.43854 2.11529 -17.56064" scale="1.2 1.2 1.6" text="color: #000000"></a-text>
-
+        <a-plane src="#learn1" scale="2 2 2" position="-0.9941 0.99156 -17.8" material="" geometry=""></a-plane>
+        <a-plane src="#learn2" scale="2 2 1" position="1.81174 1.02755 -17.8" material="" geometry=""></a-plane>
         <!--entrance-->
         <a-plane src="#boss" scale="1.67 2.95 1" position="-8 1.41 10" ></a-plane>
         <a-text value="Welcome to my webvr home" rotation="0 0 0" position="-8 0.6 11" scale="1.2 1.2 1.6"></a-text>
 
-        <!--adding videos to the webvr house
-        <a-video src="#demo-video" width="16" height="9" position="0 0 -20"></a-video>
-        <a-video src="#pitch-video" width="16" height="9" position="0 0 20"></a-video>-->
+        <!--adding videos to the webvr house-->
+       
+        <a-video src="#demo-video" scale="3.8 2.21 2" position="-4.977 1.2162 -5.83808" autoplay="false" rotation="0 0 0" >          
+</a-video>     <a-entity video-controls="src: #demo-video;"  ></a-entity>
 
-        <!--direction of use for links by tinker bell-->
+    
+
         <a-text value="click on the portal to view the links" rotation="0 -90 0" position="6.5 1.5 -11" scale="1.2 1.2 1.6" color="black"></a-text>
 
          <!--adding github website deployment link to the webvr house-->
-    <!--     <a-entity link="href: https://venusch001.github.io/mywebsite/; title: My webvr link ; image:#portal1"></a-entity>
+         <a-entity link="href: https://venusch001.github.io/mywebsite/; title: My webvr link ; image:#portal1"></a-entity>
          <a-link href="https://venusch001.github.io/mywebsite/" title="My webvr link" position="4.8 1.4 -11.5"image="#portal1" scale="0.5 0.5 0.5"></a-link>
 
-    <!--adding project drive link to the webvr house-->
-    <!--    <a-entity link="href: https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing; title: My project drive link ;image:#portal2"></a-entity>
-        <a-link href="https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing" title="My project drive link" position="4.8 1.4 -6.5"image="#portal2" scale="0.5 0.5 0.5"></a-link>-->
+        <!--adding project drive link to the webvr house-->
+        <a-entity link="href: https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing; title: My project drive link ;image:#portal2"></a-entity>
+        <a-link href="https://drive.google.com/drive/folders/1HaOxfkFa3glOC9T8la_cVE6vXU9NHSIq?usp=sharing" title="My project drive link" position="4.8 1.4 -6.5"image="#portal2" scale="0.5 0.5 0.5"></a-link>
+        
+    <!--light for kitchen script-->
         <script>
             const toggleButton = document.getElementById('toggleButton');
             const myLight = document.getElementById('myLight');
